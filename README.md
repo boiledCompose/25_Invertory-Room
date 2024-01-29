@@ -20,7 +20,7 @@
 2. `started`: 파이프라인은 UI가 표시되는 경우만 활성화되야 함으로 `SharingStarted.WhileSubscribed()`를 사용한다. 마지막 사용자의 사라짐과 공유 코루틴 중지 사이의 지연을 구성하려면 해당 메서드에 `TIMEOUT_MILLIS`를 전달한다.
 3. `initialValue`: 상태 흐름의 초깃값을 `HomeUiState()`로 설정한다.
 
-```
+```kotlin
 //예제 코드
 val homeUiState: StateFlow<HomeUiState> =
     itemsRepository.getAllItemsStream().map { HomeUiState(it) }
